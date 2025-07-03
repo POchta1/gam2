@@ -18,6 +18,7 @@ export default function Navigation() {
     { label: "Главная", href: "home" },
     { label: "Услуги", href: "services" },
     { label: "О нас", href: "about" },
+    { label: "Команда", href: "team" },
     { label: "Галерея", href: "gallery" },
     { label: "Контакты", href: "contact" },
   ];
