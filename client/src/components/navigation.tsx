@@ -71,26 +71,26 @@ export default function Navigation() {
                   <div className="absolute top-full left-0 mt-2 w-80 bg-white rounded-lg shadow-xl border border-gray-200 z-50">
                     <div className="py-3">
                       <div className="px-4 py-2 border-b border-gray-100">
-                        <h3 className="font-semibold text-auto-black">Наши услуги</h3>
+                        <h3 className="font-semibold text-gray-800">Наши услуги</h3>
                       </div>
                       {services.map((service, index) => (
                         <button
                           key={index}
                           onClick={() => scrollToSection(service.href)}
-                          className="block w-full text-left px-4 py-3 hover:bg-auto-light transition-colors group"
+                          className="block w-full text-left px-4 py-3 hover:bg-gray-50 transition-colors group"
                         >
                           <div className="flex justify-between items-center">
-                            <span className="text-sm text-auto-black group-hover:text-auto-red font-medium">
+                            <span className="text-sm text-gray-700 group-hover:text-red-600 font-medium">
                               {service.label}
                             </span>
-                            <span className="text-xs text-auto-red font-semibold">
+                            <span className="text-xs text-red-600 font-semibold">
                               {service.price}
                             </span>
                           </div>
                         </button>
                       ))}
-                      <div className="px-4 py-3 border-t border-gray-100 bg-auto-light/50">
-                        <p className="text-xs text-auto-gray">Аварийная служба 24/7: +7 (495) 911-11-11</p>
+                      <div className="px-4 py-3 border-t border-gray-100 bg-gray-50">
+                        <p className="text-xs text-gray-600">Аварийная служба 24/7: +7 (495) 911-11-11</p>
                       </div>
                     </div>
                   </div>
@@ -118,17 +118,17 @@ export default function Navigation() {
                     </button>
                   ))}
                   
-                  <div className="border-t border-auto-gray pt-4 mt-4">
-                    <div className="text-lg font-medium mb-3 text-auto-red">Услуги</div>
+                  <div className="border-t border-gray-300 pt-4 mt-4">
+                    <div className="text-lg font-medium mb-3 text-red-600">Услуги</div>
                     {services.map((service, index) => (
                       <button
                         key={index}
                         onClick={() => scrollToSection(service.href)}
-                        className="block text-left hover:text-auto-red px-6 py-2 text-base transition-colors w-full"
+                        className="block text-left hover:text-red-600 px-6 py-2 text-base transition-colors w-full text-gray-700"
                       >
                         <div className="flex justify-between items-center">
                           <span>{service.label}</span>
-                          <span className="text-sm text-auto-red">{service.price}</span>
+                          <span className="text-sm text-red-600 font-semibold">{service.price}</span>
                         </div>
                       </button>
                     ))}
