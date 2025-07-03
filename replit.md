@@ -114,3 +114,5 @@ Changelog:
 - July 03, 2025. Enhanced about section with company achievements and expanded information
 - July 03, 2025. Updated contact section with additional contact methods and location details
 - July 03, 2025. Enhanced hero section with extended company description
+- July 03, 2025. Added dropdown submenu for services in navigation with hover functionality
+- July 03, 2025. Significantly expanded about section with company history, principles, equipment details, and warranty information

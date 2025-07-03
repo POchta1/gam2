@@ -1,10 +1,11 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import { Menu } from "lucide-react";
+import { Menu, ChevronDown } from "lucide-react";
 
 export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
+  const [isServicesOpen, setIsServicesOpen] = useState(false);
 
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
@@ -16,11 +17,19 @@ export default function Navigation() {
 
   const navItems = [
     { label: "Главная", href: "home" },
-    { label: "Услуги", href: "services" },
     { label: "О нас", href: "about" },
     { label: "Команда", href: "team" },
     { label: "Галерея", href: "gallery" },
     { label: "Контакты", href: "contact" },
+  ];
+
+  const services = [
+    { label: "Диагностика", href: "services" },
+    { label: "Ремонт двигателя", href: "services" },
+    { label: "Кузовной ремонт", href: "services" },
+    { label: "Техобслуживание", href: "services" },
+    { label: "Электрика", href: "services" },
+    { label: "Шиномонтаж", href: "services" },
   ];
 
   return (
@@ -44,6 +53,36 @@ export default function Navigation() {
                   {item.label}
                 </button>
               ))}
+              
+              <div 
+                className="relative"
+                onMouseEnter={() => setIsServicesOpen(true)}
+                onMouseLeave={() => setIsServicesOpen(false)}
+              >
+                <button
+                  onClick={() => scrollToSection("services")}
+                  className="hover:text-auto-red px-3 py-2 text-sm font-medium transition-colors flex items-center"
+                >
+                  Услуги
+                  <ChevronDown className="ml-1 h-4 w-4" />
+                </button>
+                
+                {isServicesOpen && (
+                  <div className="absolute top-full left-0 mt-2 w-64 bg-white rounded-lg shadow-xl border border-gray-200 z-50">
+                    <div className="py-2">
+                      {services.map((service, index) => (
+                        <button
+                          key={index}
+                          onClick={() => scrollToSection(service.href)}
+                          className="block w-full text-left px-4 py-2 text-sm text-auto-black hover:bg-auto-light hover:text-auto-red transition-colors"
+                        >
+                          {service.label}
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+                )}
+              </div>
             </div>
           </nav>
 
@@ -65,6 +104,19 @@ export default function Navigation() {
                       {item.label}
                     </button>
                   ))}
+                  
+                  <div className="border-t border-auto-gray pt-4 mt-4">
+                    <div className="text-lg font-medium mb-2 text-auto-red">Услуги</div>
+                    {services.map((service, index) => (
+                      <button
+                        key={index}
+                        onClick={() => scrollToSection(service.href)}
+                        className="block text-left hover:text-auto-red px-6 py-1 text-base transition-colors"
+                      >
+                        {service.label}
+                      </button>
+                    ))}
+                  </div>
                 </div>
               </SheetContent>
             </Sheet>
