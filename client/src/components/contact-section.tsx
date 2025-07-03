@@ -6,22 +6,22 @@ export default function ContactSection() {
     {
       icon: <MapPin className="h-6 w-6" />,
       title: "Адрес",
-      content: "ул. Автомобильная, 123, г. Москва"
+      content: "ул. Автомобильная, 123, г. Москва\nРядом с метро Автозаводская"
     },
     {
       icon: <Phone className="h-6 w-6" />,
       title: "Телефон",
-      content: "+7 (495) 123-45-67"
+      content: "+7 (495) 123-45-67\nWhatsApp: +7 (985) 123-45-67"
     },
     {
       icon: <Mail className="h-6 w-6" />,
       title: "Email",
-      content: "info@profavto.ru"
+      content: "info@profavto.ru\nzakaz@profavto.ru"
     },
     {
       icon: <Clock className="h-6 w-6" />,
       title: "Часы работы",
-      content: "Пн-Пт: 8:00 - 20:00\nСб-Вс: 9:00 - 18:00"
+      content: "Пн-Пт: 8:00 - 20:00\nСб-Вс: 9:00 - 18:00\nВыходные дни: приём по записи"
     }
   ];
 
