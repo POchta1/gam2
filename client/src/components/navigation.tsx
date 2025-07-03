@@ -24,12 +24,12 @@ export default function Navigation() {
   ];
 
   const services = [
-    { label: "Диагностика", href: "services" },
-    { label: "Ремонт двигателя", href: "services" },
-    { label: "Кузовной ремонт", href: "services" },
-    { label: "Техобслуживание", href: "services" },
-    { label: "Электрика", href: "services" },
-    { label: "Шиномонтаж", href: "services" },
+    { label: "Диагностика автомобиля", href: "services", price: "от 1 500 ₽" },
+    { label: "Ремонт двигателя", href: "services", price: "от 15 000 ₽" },
+    { label: "Кузовной ремонт", href: "services", price: "от 8 000 ₽" },
+    { label: "Техническое обслуживание", href: "services", price: "от 3 000 ₽" },
+    { label: "Ремонт электрики", href: "services", price: "от 2 000 ₽" },
+    { label: "Шиномонтаж", href: "services", price: "от 800 ₽" },
   ];
 
   return (
@@ -68,17 +68,30 @@ export default function Navigation() {
                 </button>
                 
                 {isServicesOpen && (
-                  <div className="absolute top-full left-0 mt-2 w-64 bg-white rounded-lg shadow-xl border border-gray-200 z-50">
-                    <div className="py-2">
+                  <div className="absolute top-full left-0 mt-2 w-80 bg-white rounded-lg shadow-xl border border-gray-200 z-50">
+                    <div className="py-3">
+                      <div className="px-4 py-2 border-b border-gray-100">
+                        <h3 className="font-semibold text-auto-black">Наши услуги</h3>
+                      </div>
                       {services.map((service, index) => (
                         <button
                           key={index}
                           onClick={() => scrollToSection(service.href)}
-                          className="block w-full text-left px-4 py-2 text-sm text-auto-black hover:bg-auto-light hover:text-auto-red transition-colors"
+                          className="block w-full text-left px-4 py-3 hover:bg-auto-light transition-colors group"
                         >
-                          {service.label}
+                          <div className="flex justify-between items-center">
+                            <span className="text-sm text-auto-black group-hover:text-auto-red font-medium">
+                              {service.label}
+                            </span>
+                            <span className="text-xs text-auto-red font-semibold">
+                              {service.price}
+                            </span>
+                          </div>
                         </button>
                       ))}
+                      <div className="px-4 py-3 border-t border-gray-100 bg-auto-light/50">
+                        <p className="text-xs text-auto-gray">Аварийная служба 24/7: +7 (495) 911-11-11</p>
+                      </div>
                     </div>
                   </div>
                 )}
@@ -106,14 +119,17 @@ export default function Navigation() {
                   ))}
                   
                   <div className="border-t border-auto-gray pt-4 mt-4">
-                    <div className="text-lg font-medium mb-2 text-auto-red">Услуги</div>
+                    <div className="text-lg font-medium mb-3 text-auto-red">Услуги</div>
                     {services.map((service, index) => (
                       <button
                         key={index}
                         onClick={() => scrollToSection(service.href)}
-                        className="block text-left hover:text-auto-red px-6 py-1 text-base transition-colors"
+                        className="block text-left hover:text-auto-red px-6 py-2 text-base transition-colors w-full"
                       >
-                        {service.label}
+                        <div className="flex justify-between items-center">
+                          <span>{service.label}</span>
+                          <span className="text-sm text-auto-red">{service.price}</span>
+                        </div>
                       </button>
                     ))}
                   </div>
