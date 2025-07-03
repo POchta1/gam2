@@ -7,37 +7,37 @@ export default function AdvantagesSection() {
       icon: <Shield className="h-8 w-8" />,
       title: "Гарантия качества",
       description: "Письменная гарантия на все виды работ от 6 месяцев до 2 лет. Используем только оригинальные запчасти.",
-      color: "bg-green-500"
+      color: "bg-auto-red"
     },
     {
       icon: <Clock className="h-8 w-8" />,
       title: "Экономим ваше время",
       description: "Быстрая диагностика, четкие сроки выполнения работ. Аварийная служба работает круглосуточно.",
-      color: "bg-blue-500"
+      color: "bg-auto-dark"
     },
     {
       icon: <Award className="h-8 w-8" />,
       title: "Сертифицированные мастера",
       description: "Все специалисты имеют профильное образование и регулярно проходят курсы повышения квалификации.",
-      color: "bg-purple-500"
+      color: "bg-auto-red"
     },
     {
       icon: <Users className="h-8 w-8" />,
       title: "Индивидуальный подход",
       description: "Персональный менеджер для каждого клиента. Подберем оптимальное решение под ваш бюджет.",
-      color: "bg-orange-500"
+      color: "bg-auto-gray"
     },
     {
       icon: <Wrench className="h-8 w-8" />,
       title: "Современное оборудование",
       description: "Используем диагностическое оборудование последнего поколения и профессиональный инструмент.",
-      color: "bg-teal-500"
+      color: "bg-auto-dark"
     },
     {
       icon: <CreditCard className="h-8 w-8" />,
       title: "Удобная оплата",
       description: "Принимаем наличные, банковские карты, безналичный расчет. Возможна рассрочка на крупные работы.",
-      color: "bg-pink-500"
+      color: "bg-auto-gray"
     }
   ];
 
