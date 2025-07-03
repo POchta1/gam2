@@ -116,3 +116,6 @@ Changelog:
 - July 03, 2025. Enhanced hero section with extended company description
 - July 03, 2025. Added dropdown submenu for services in navigation with hover functionality
 - July 03, 2025. Significantly expanded about section with company history, principles, equipment details, and warranty information
+- July 03, 2025. Enhanced navigation dropdown with proper service list including prices and emergency contact
+- July 03, 2025. Completely redesigned hero section with modern layout, stats, pricing preview, and improved visual hierarchy
+- July 03, 2025. Added new advantages section highlighting key benefits and special offers
