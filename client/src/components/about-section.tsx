@@ -14,12 +14,37 @@ export default function AboutSection() {
     "Экологическая сертификация всех рабочих процессов"
   ];
 
+  const companyInfo = [
+    {
+      title: "История компании",
+      content: "Основанная в 2009 году, наша мастерская начинала с небольшого гаража и двух мастеров. За 15 лет работы мы выросли в современный автосервис с командой из 15 специалистов и собственной базой постоянных клиентов более 5000 автовладельцев."
+    },
+    {
+      title: "Наши принципы",
+      content: "Честность, профессионализм и качество - три кита, на которых держится наша работа. Мы никогда не навязываем лишних услуг и всегда объясняем клиенту, что действительно необходимо его автомобилю."
+    },
+    {
+      title: "Оборудование",
+      content: "В нашем арсенале - диагностические сканеры последнего поколения, подъемники, сварочное оборудование, покрасочная камера с системой фильтрации воздуха и многое другое. Все оборудование регулярно проходит калибровку и обновляется."
+    },
+    {
+      title: "Гарантии",
+      content: "На все выполненные работы мы предоставляем письменную гарантию. Срок гарантии зависит от вида работ: от 6 месяцев на расходные материалы до 2 лет на капитальный ремонт двигателя."
+    }
+  ];
+
   return (
     <section id="about" className="py-20 bg-auto-dark text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div className="text-center mb-16">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">О нашей мастерской</h2>
+          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+            Более 15 лет профессионального опыта в автомобильном ремонте
+          </p>
+        </div>
+        
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
           <div>
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">О нашей мастерской</h2>
             <p className="text-xl text-gray-300 mb-6">
               Мы работаем в сфере автомобильного ремонта уже более 15 лет. 
               Наша команда состоит из высококвалифицированных специалистов, 
@@ -52,6 +77,15 @@ export default function AboutSection() {
             />
             <div className="absolute inset-0 bg-gradient-to-t from-auto-dark/20 to-transparent rounded-lg"></div>
           </div>
+        </div>
+        
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {companyInfo.map((info, index) => (
+            <div key={index} className="bg-auto-light/10 p-6 rounded-lg">
+              <h3 className="text-xl font-semibold text-auto-red mb-3">{info.title}</h3>
+              <p className="text-gray-300 leading-relaxed">{info.content}</p>
+            </div>
+          ))}
         </div>
       </div>
     </section>
