@@ -18,6 +18,7 @@ const bookingFormSchema = insertBookingSchema.extend({
   name: z.string().min(2, "Имя должно содержать минимум 2 символа"),
   carBrand: z.string().min(2, "Марка автомобиля обязательна"),
   serviceType: z.string().min(1, "Выберите тип услуги"),
+  description: z.string().optional(),
 });
 
 type BookingFormData = z.infer<typeof bookingFormSchema>;
@@ -87,7 +88,7 @@ export default function BookingForm() {
                   <Input
                     {...field}
                     placeholder="Ваше имя"
-                    className="text-auto-black"
+                    className="text-gray-900 bg-white border-gray-300 placeholder-gray-500 focus:border-red-500 focus:ring-red-500"
                   />
                 </FormControl>
                 <FormMessage />
@@ -106,7 +107,7 @@ export default function BookingForm() {
                     {...field}
                     type="tel"
                     placeholder="+7 (___) ___-__-__"
-                    className="text-auto-black"
+                    className="text-gray-900 bg-white border-gray-300 placeholder-gray-500 focus:border-red-500 focus:ring-red-500"
                   />
                 </FormControl>
                 <FormMessage />
@@ -124,7 +125,7 @@ export default function BookingForm() {
                   <Input
                     {...field}
                     placeholder="BMW, Mercedes, Toyota..."
-                    className="text-auto-black"
+                    className="text-gray-900 bg-white border-gray-300 placeholder-gray-500 focus:border-red-500 focus:ring-red-500"
                   />
                 </FormControl>
                 <FormMessage />
@@ -140,7 +141,7 @@ export default function BookingForm() {
                 <FormLabel className="text-auto-black">Тип услуги</FormLabel>
                 <Select onValueChange={field.onChange} defaultValue={field.value}>
                   <FormControl>
-                    <SelectTrigger className="text-auto-black">
+                    <SelectTrigger className="text-gray-900 bg-white border-gray-300 focus:border-red-500 focus:ring-red-500">
                       <SelectValue placeholder="Выберите услугу" />
                     </SelectTrigger>
                   </FormControl>
@@ -165,10 +166,11 @@ export default function BookingForm() {
                 <FormLabel className="text-auto-black">Описание проблемы</FormLabel>
                 <FormControl>
                   <Textarea
-                    {...field}
                     placeholder="Опишите проблему с автомобилем..."
                     rows={4}
-                    className="text-auto-black"
+                    className="text-gray-900 bg-white border-gray-300 placeholder-gray-500 focus:border-red-500 focus:ring-red-500"
+                    {...field}
+                    value={field.value || ""}
                   />
                 </FormControl>
                 <FormMessage />
